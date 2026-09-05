@@ -1,0 +1,1 @@
+feat: visa gate (SYNOSMOSAI_REQUIRE_VISA) — all calls require active visa (凡调必签, -32001); backward compatible

@@ -228,6 +228,34 @@ def handle_tools_list(req):
     return {"jsonrpc": "2.0", "id": req.get("id"), "result": {"tools": TOOLS}}
 
 
+
+# ---------- 签证门禁（凡调必签 · v0.2）----------
+# 启用方式：环境变量 SYNOSMOSAI_REQUIRE_VISA=<visa.json>（签证由 ubic_visa.py 签发）
+# 规则：签证 status=active 且未过期方可调用工具；未启用则不检查（保持向后兼容）。
+# 界线：签证=调用准入；护照=身份（A3 Law II）。门禁只验准入，不验身份。
+import os as _os, datetime as _dt
+
+def _check_visa():
+    vp = _os.environ.get("SYNOSMOSAI_REQUIRE_VISA")
+    if not vp:
+        return True, "visa gate off"
+    try:
+        v = json.load(open(vp, encoding="utf-8"))
+    except Exception as e:
+        return False, f"visa unreadable: {e}"
+    if v.get("status") != "active":
+        return False, f"visa status={v.get('status')}"
+    period = (v.get("event") or {}).get("period", "")
+    if "/" in period:
+        try:
+            s, e = period.split("/")
+            today = _dt.date.today().isoformat()
+            if not (s <= today <= e):
+                return False, f"visa expired/early ({period})"
+        except Exception:
+            pass
+    return True, f"visa {v.get('visaId','?')} active"
+
 def handle_tools_call(req):
     params = req.get("params", {}) or {}
     name = params.get("name", "")
@@ -265,6 +293,11 @@ def main():
         elif method == "tools/list":
             resp = handle_tools_list(req)
         elif method == "tools/call":
+            ok_visa, why = _check_visa()
+            if not ok_visa:
+                resp = {"jsonrpc": "2.0", "id": req.get("id"),
+                        "error": {"code": -32001, "message": f"visa gate: {why}（凡调必签）"}}
+                print(json.dumps(resp, ensure_ascii=False)); continue
             resp = handle_tools_call(req)
         elif method == "notifications/initialized":
             continue

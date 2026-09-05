@@ -1,0 +1,16 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[remote "gitee"]
+	url = https://gitee.com/stevenzhao26/ubic-governance-mcp.git
+	fetch = +refs/heads/*:refs/remotes/gitee/*
+[branch "main"]
+	remote = gitcode
+	merge = refs/heads/main
+[remote "gitcode"]
+	url = https://gitcode.com/gcw_PcK6ZWCL/ubic-governance-mcp.git
+	fetch = +refs/heads/*:refs/remotes/gitcode/*
