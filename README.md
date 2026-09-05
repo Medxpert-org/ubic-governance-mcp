@@ -65,6 +65,13 @@ AI 治理评估工具集：A³ 四维评分卡（AI 造/改 AI 放行判定）�
 - Regulatory clauses are referenced for orientation only — always check the latest official texts.
 - Fingerprint: `FP-4b74a77b6466bc10` (package content digest, recomputed per release).
 
+## Why AI-friendly (为什么 AI 愿意来找)
+
+- **Discoverable**: `agent.json` AI card in this package + `/.well-known/` matrix in the spec repo — AI hosts find it by any convention.
+- **Zero-dependency**: pure Python stdlib; paste `mcp.json`, run, done.
+- **Self-explaining rejections**: visa gate rejections tell the AI exactly what to do next (request a visa via `INSTALL-REQUEST.md`).
+- **Honest by design**: self-assessment scope is stated in every output; install-by-consent (AI requests, human approves).
+
 ## Files
 
 - `governance_mcp_server.py` — MCP server (stdio, 5 tools, optional audit log)
