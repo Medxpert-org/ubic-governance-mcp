@@ -50,7 +50,7 @@ echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{}}' | python gover
 echo '{"jsonrpc":"2.0","id":2,"method":"tools/list"}' | python governance_mcp_server.py
 
 # governance scan
-echo '{"jsonrpc":"2.0","id":3,"method":"tools/call","params":{"name":"gov_scan","arguments":{"text":"contact 13812345678 a@x.com"}}}' | python governance_mcp_server.py
+echo '{"jsonrpc":"2.0","id":3,"method":"tools/call","params":{"name":"gov_scan","arguments":{"text":"contact <phone-number> user@example.com"}}}' | python governance_mcp_server.py
 ```
 
 ## 中文简介
@@ -76,8 +76,8 @@ AI 治理评估工具集：A³ 四维评分卡（AI 造/改 AI 放行判定）�
 
 ## Author & license
 
-Author: 赵兴华 (Steven Zhao·China) · ORCID [0009-0001-0512-1237](https://orcid.org/0009-0001-0512-1237)
 Organization: SynomosAI · <https://medxpert.cn>
+Author reference (provenance only): ORCID [0009-0001-0512-1237](https://orcid.org/0009-0001-0512-1237)
 
 Code: MIT. Docs: CC BY 4.0. **UBIC and related logos are not covered by these licenses.**
 Co-created by human and AI on the WorkBuddy platform.

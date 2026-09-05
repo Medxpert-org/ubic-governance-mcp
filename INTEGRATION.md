@@ -19,7 +19,7 @@ python governance_mcp_server.py
 {"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"a3_assess","arguments":{"intent":4,"impact":2,"reversibility":5,"oversight":3}}}
 ```
 
-**阶段 2（上线前）**：云函数/HTTP 包装。小程序 wx.request → 云函数拉起 stdio 子进程（或常驻进程池）→ 转发 JSON-RPC → 回传。包装器只做转发，不改语义。⚠️ 云端部署属联网动作，需 Steven 点头后另行实施。
+**阶段 2（上线前）**：云函数/HTTP 包装。小程序 wx.request → 云函数拉起 stdio 子进程（或常驻进程池）→ 转发 JSON-RPC → 回传。包装器只做转发，不改语义。⚠️ 云端部署属联网动作，需持有人点头后另行实施。
 
 ## 二、响应结构（统一包装）
 
@@ -54,7 +54,7 @@ python governance_mcp_server.py
 ## 五、红线（小程序侧必须遵守）
 
 1. **只出公开层**：护照/花名册数据只展示 `display_flags.title=public` 的字段；`human_binding`（真人绑定）与 `ledger/health` 等私有字段**永不上小程序**。
-2. **客户面向不出现个人姓名**（Steven/赵兴华/兴华等全部禁止）；署名口径：治理线 SynomosAI。
+2. **客户面向不出现个人姓名**（任何个人姓名一律禁止）；署名口径：治理线 SynomosAI。
 3. **自评但书不可删**：凡展示 a3_assess / compliance_checklist 结果，页面须带"自评性质，非独立第三方认证"字样（工具返回的 `scope`/`note` 字段已内置，前端不得过滤）。
 4. **评估≠认证**：不得在小程序使用"认证/背书/官方资质"等表述。
 5. 法规条款展示保留"以官方最新文本为准"但书。
