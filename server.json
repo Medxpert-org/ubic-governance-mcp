@@ -1,0 +1,13 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.Medxpert-org/ubic-governance-mcp",
+  "title": "SynomosAI Governance MCP",
+  "description": "AI governance MCP: A3 scorecard, ISO 42001 evidence templates, compliance checklist, gov_scan.",
+  "version": "1.0.0",
+  "websiteUrl": "https://medxpert.cn",
+  "repository": {
+    "url": "https://github.com/Medxpert-org/ubic-governance-mcp",
+    "source": "github",
+    "id": "1357820188"
+  }
+}

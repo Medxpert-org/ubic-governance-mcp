@@ -88,3 +88,12 @@ Author reference (provenance only): ORCID [0009-0001-0512-1237](https://orcid.or
 
 Code: MIT. Docs: CC BY 4.0. **UBIC and related logos are not covered by these licenses.**
 Co-created by human and AI on the WorkBuddy platform.
+
+## 权利与归属（Rights & Attribution）
+
+代码：MIT License。文档：CC BY 4.0。**UBIC 及相关标识不在上述许可覆盖范围内。**
+
+© 2026 赵兴华 / Steven Zhao·China (ORCID 0009-0001-0512-1237). All rights reserved.
+名称状态 (name status)  : "SynomosAI" / "MedXpert" — 未申请实体注册、未申请商标注册
+                        (not a registered legal entity; no trademark registered)
+`mcp-name: io.github.Medxpert-org/ubic-governance-mcp`
