@@ -1,0 +1,49 @@
+# SynomosAI Governance MCP (ubic-governance-mcp) — 完整文本
+
+本文件为 llms.txt 标准的「完整版」，供长上下文模型一次性读取本仓库的完整说明。
+
+## 这是什么
+
+`ubic-governance-mcp` 是一个**只读 MCP 工具包**，用于评估 AI 系统的证据就绪度（evidence readiness）：A³ 四维评分卡、ISO/IEC 42001 + NIST AI RMF 证据链模板、合规清单、passport 查询、文本体检。由 SynomosAI 出品，属 **UBIC Protocol**（AI agent 人格注册层）的一部分。
+
+一句话：纯标准库 · 零依赖 · 零网络外发 · 可审计——给 AI 系统做治理体检。
+
+## 解决什么问题
+
+1. AI 造 / AI 改 AI 的放行判定（A³ 评分卡：intent / impact / reversibility / oversight，各 1–5 分共 20 分 → release / conditional / reject）。
+2. 证据链留痕（决策日志、风险登记、模型卡、变更记录、人工监督证明、事件台账）。
+3. 合规清单（EU AI Act 2024/1689 相关条款、GB/Z 185 参考、ISO/IEC 42001、PIPL/GDPR）。
+4. 隐私 / 凭据体检（手机号、邮箱、本地路径、credential 类字符串、密钥指纹 `ghp_` / `sk-` / `AKIA`）。
+5. Passport / 身份码查询（本地台账）。
+
+## 快速开始
+
+前置依赖：Python ≥ 3.9，无第三方包。
+
+```bash
+# 初始化 + 列出工具
+echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{}}' | python governance_mcp_server.py
+echo '{"jsonrpc":"2.0","id":2,"method":"tools/list"}' | python governance_mcp_server.py
+
+# governance scan（文本体检）
+echo '{"jsonrpc":"2.0","id":3,"method":"tools/call","params":{"name":"gov_scan","arguments":{"text":"contact <phone-number> user@example.com"}}}' | python governance_mcp_server.py
+```
+
+Install-by-consent：AI agent 可*请求*本工具，人类批准（A³ Law II：机器验证、人类授准）。参考实现不内置自我安装路径，见 `INSTALL-REQUEST.md`。
+
+## 触发词
+
+AI 治理评估 / AI 放行判定 / A³ 评分卡 / 证据链模板 / 合规清单 / EU AI Act / 文本体检 / 凭据扫描 / 零网络外发 / 只读 MCP / evidence readiness / governance scan。
+
+## 许可与权利
+
+代码：MIT License。文档：CC BY 4.0。**UBIC 及相关标识不在上述许可覆盖范围内。**
+© 2026 赵兴华 / Steven Zhao·China (ORCID 0009-0001-0512-1237). All rights reserved.
+「SynomosAI」/「MedXpert」未申请实体注册、未申请商标注册（not a registered legal entity; no trademark registered）。
+`mcp-name: io.github.Medxpert-org/ubic-governance-mcp`
+
+## 链接
+
+- 仓库: https://github.com/Medxpert-org/ubic-governance-mcp
+- 官网: https://medxpert.cn
+- 规范仓: https://github.com/Medxpert-org/ai-passport-spec

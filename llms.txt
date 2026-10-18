@@ -1,0 +1,22 @@
+# SynomosAI Governance MCP (ubic-governance-mcp)
+
+> Read-only MCP toolkit for assessing an AI system's evidence readiness: A³ scorecard, ISO/IEC 42001 evidence templates, compliance checklist, red-line scan. Pure stdlib, zero network egress.
+
+`ubic-governance-mcp` 是面向 AI 治理评估的只读 MCP 工具包：A³ 四维评分卡（intent / impact / reversibility / oversight）、ISO/IEC 42001 + NIST AI RMF 证据链模板、合规清单（EU AI Act 2024/1689 / GB/Z 185 / PIPL·GDPR）、passport 查询、文本体检（gov_scan）。纯 Python 标准库、零第三方依赖、零网络外发、响应带 trace_id 可审计。
+
+## 核心
+
+- [README.md](README.md): 项目说明与快速开始（中英）
+- [README.en.md](README.en.md): 英文版说明
+- [governance_mcp_server.py](governance_mcp_server.py): MCP 服务器（stdio，5 个工具，可选审计日志）
+- [agent.json](agent.json): AI 卡片（UBIC agent-card v1 元数据）
+- [connector-meta.json](connector-meta.json): 市场 / 注册表元数据
+- [mcp.json](mcp.json): 可直接粘贴的 MCP 客户端配置
+- [INSTALL-REQUEST.md](INSTALL-REQUEST.md): AI 请求 / 人类批准安装标准
+- [INTEGRATION.md](INTEGRATION.md): 应用后端集成契约
+- [openapi.yaml](openapi.yaml): OpenAPI 描述
+
+## 在线
+
+- 官网: https://medxpert.cn
+- 规范仓: https://github.com/Medxpert-org/ai-passport-spec
