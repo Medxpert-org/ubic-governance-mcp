@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ubic-governance-mcp"
+description = "AI governance MCP: A3 scorecard, ISO 42001 evidence templates, compliance checklists, identity lookup and gov_scan."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "Zhao Xinghua (Steven Zhao)", email = "zhaoxinghua09@gmail.com" }]
+keywords = ["mcp", "model-context-protocol", "ai-governance", "iso-42001", "nist-ai-rmf", "eu-ai-act", "audit"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Legal Industry",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Security",
+  "Operating System :: OS Independent",
+]
+dependencies = []
+dynamic = ["version"]
+
+[project.scripts]
+# 与包同名的那条让 `uvx ubic-governance-mcp` 直接起服务（Registry 客户端按包名解析）。
+ubic-governance-mcp = "ubic_governance.server:main"
+ubic-governance = "ubic_governance.server:main"
+
+[project.urls]
+Homepage = "https://medxpert.cn"
+Repository = "https://github.com/Medxpert-org/ubic-governance-mcp"
+Issues = "https://github.com/Medxpert-org/ubic-governance-mcp/issues"
+
+[tool.setuptools.dynamic]
+version = { attr = "ubic_governance.__version__" }
+
+[tool.setuptools.packages.find]
+include = ["ubic_governance*"]
+namespaces = false

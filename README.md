@@ -1,5 +1,7 @@
 # SynomosAI Governance MCP
 
+<!-- mcp-name: io.github.Medxpert-org/ubic-governance-mcp -->
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 **AI governance assessment tools for AI agents and their builders.**
