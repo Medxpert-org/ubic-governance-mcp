@@ -214,6 +214,12 @@ TOOL_HANDLERS = {
 }
 
 
+# 握手里的服务名必须与本发行包一致。历史值沿用 synomosai-governance-mcp，
+# 会让两个不同产品在客户端列表里同名（synomosai-governance-mcp 1.2.2 另有一条），
+# 用户无法判断自己连的是哪一个。改为发行包名，和 server.json 的 packages.identifier 对齐。
+SERVER_NAME = "ubic-governance-mcp"
+
+
 def handle_initialize(req):
     return {
         "jsonrpc": "2.0",
@@ -221,7 +227,7 @@ def handle_initialize(req):
         "result": {
             "protocolVersion": "2025-03-26",
             "capabilities": {"tools": {}},
-            "serverInfo": {"name": "synomosai-governance-mcp", "version": VERSION},
+            "serverInfo": {"name": SERVER_NAME, "version": VERSION},
         },
     }
 
