@@ -1,0 +1,3 @@
+[console_scripts]
+ubic-governance = ubic_governance.server:main
+ubic-governance-mcp = ubic_governance.server:main

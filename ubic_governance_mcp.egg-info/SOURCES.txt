@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+ubic_governance/__init__.py
+ubic_governance/server.py
+ubic_governance_mcp.egg-info/PKG-INFO
+ubic_governance_mcp.egg-info/SOURCES.txt
+ubic_governance_mcp.egg-info/dependency_links.txt
+ubic_governance_mcp.egg-info/entry_points.txt
+ubic_governance_mcp.egg-info/top_level.txt
