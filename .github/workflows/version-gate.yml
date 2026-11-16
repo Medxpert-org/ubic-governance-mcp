@@ -1,13 +1,18 @@
-name: version-gate
+name: version gate
 
 on:
   push:
-    branches: [main]
+    branches: ["main"]
   pull_request:
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
   contents: read
+
+concurrency:
+  group: version-gate-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   gate:
