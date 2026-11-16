@@ -12,7 +12,7 @@
   },
   "icons": [
     {
-      "src": "https://cdn.jsdelivr.net/gh/Medxpert-org/ubic-governance-mcp@main/icon.svg",
+      "src": "https://cdn.jsdelivr.net/gh/Medxpert-org/ubic-governance-mcp@v1.0.1/icon.svg",
       "mimeType": "image/svg+xml",
       "sizes": ["any"],
       "theme": "light"
